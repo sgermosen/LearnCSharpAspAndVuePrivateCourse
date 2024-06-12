@@ -72,7 +72,7 @@ namespace ProgramsForLearning.ThirdProgram
 
             //for (short i = 0; i < numbers1.Length; i++)
             //for (short i = 5; i > 0; i--)
-            for (int i = 0; i < 5; i++)
+            for (short i = 0; i < 5; i++)
             {
                 //Console.WriteLine($"El Valor de i es: {i}");
                 ////Console.WriteLine("El Valor de i es: " + i);
@@ -81,7 +81,8 @@ namespace ProgramsForLearning.ThirdProgram
                 //Le Mando unos argumentos
                 PrintNumberFromArray(numbers1, i);
             }
-            for (int i = 0; i <= 3; i++)
+             
+            for (int i = 0; i <= 3; i++) //iteration
             {
                 PrintNumberFromArray(numbers2, i);
             }
@@ -149,7 +150,7 @@ Y posterior a eso podrá escoger los números a los cuales les desea realizar di
         }
 
         //                                     parametros
-        public static void PrintNumberFromArray(int[] numbers, int i)
+        public static void PrintNumberFromArray(int[] numbers, long i)
         {
             Console.WriteLine($"El Valor de i es: {i}");
             Console.WriteLine($"El Valor del arreglo en el indice {i} es: {numbers[i]}");
