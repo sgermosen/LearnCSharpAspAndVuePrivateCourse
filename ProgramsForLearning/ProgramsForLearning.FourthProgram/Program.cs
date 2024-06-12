@@ -88,8 +88,8 @@ int[,] matrix = {
             };
 string[,] matrixRecord = {
                 { "Juan", "Pedro", "M" }, // Fila 0
-                { "Alberto", "Santiago", "M" }, // Fila 0
-                { "Juana", "Contreras", "F" }, // Fila 0
+                { "Alberto", "Santiago", "M" }, // Fila 1
+                { "Juana", "Contreras", "F" }, // Fila 2
             };
 
 for (int i = 0; i < 3; i++)
