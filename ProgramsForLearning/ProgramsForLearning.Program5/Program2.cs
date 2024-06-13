@@ -1,4 +1,4 @@
-﻿namespace ProgramsForLearning.FivethProgram
+﻿namespace ProgramsForLearning.Program5
 {
     class Program
     {
@@ -57,7 +57,7 @@
         //private char _sex;
         //private string _fullName => $"{name} {lastName}";
 
-        public string Name { get; set; }
+        public string Name { get; set; } //auto implemented properties
 
         //public string Name2
         //{
@@ -74,6 +74,7 @@
         //        }
         //    } 
         //}
+
         public string LastName { get; set; }
         public int Age { get; set; }
         public char Sex { get; set; }

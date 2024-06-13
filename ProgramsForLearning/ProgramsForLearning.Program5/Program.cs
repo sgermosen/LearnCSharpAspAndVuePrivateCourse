@@ -19,7 +19,7 @@
 // i = 0;
 
 
-using ProgramsForLearning.FivethProgram.Models;
+//using ProgramsForLearning.FivethProgram.Models;
 
 //Person student;
 //student = new ProgramsForLearning.FivethProgram.Models.Person();
@@ -78,10 +78,13 @@ using ProgramsForLearning.FivethProgram.Models;
 //    Console.WriteLine($"Mi Nombre es: {person.GetFullName()}");
 //}
 
-using ProgramsForLearning.FivethProgram.Models;
+//using ProgramsForLearning.FivethProgram.Models;
+using ProgramsForLearning.Program5.Models;
 
 var basicMath = new BasicCalculator();
-
+//basicMath.Brand = "Toshiba";
+basicMath.SetBrand("Toshiba2");
+Console.WriteLine(basicMath.PrintModel());
 
 //basicMath.PrintProgramHeader(string.Empty, "", string.Empty);
 BasicCalculator.PrintProgramHeader(string.Empty, string.Empty, string.Empty);

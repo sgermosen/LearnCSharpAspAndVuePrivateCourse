@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.FisrtProgram", "ProgramsForLearning.FisrtProgram\ProgramsForLearning.FisrtProgram.csproj", "{103372F1-19F7-41A8-BA5D-01D4DCF7D7CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.Program1", "ProgramsForLearning.FisrtProgram\ProgramsForLearning.Program1.csproj", "{103372F1-19F7-41A8-BA5D-01D4DCF7D7CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.SecondProgram", "ProgramsForLearning.SecondProgram\ProgramsForLearning.SecondProgram.csproj", "{C6195AD9-EC74-44DD-8B6B-764BEC7A94DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.Program2", "ProgramsForLearning.SecondProgram\ProgramsForLearning.Program2.csproj", "{C6195AD9-EC74-44DD-8B6B-764BEC7A94DD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.ThirdProgram", "ProgramsForLearning.ThirdProgram\ProgramsForLearning.ThirdProgram.csproj", "{57DAEE3A-D985-440B-A7F0-9161736C769F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.Program3", "ProgramsForLearning.ThirdProgram\ProgramsForLearning.Program3.csproj", "{57DAEE3A-D985-440B-A7F0-9161736C769F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.FourthProgram", "ProgramsForLearning.FourthProgram\ProgramsForLearning.FourthProgram.csproj", "{DFAD0DF6-5214-4F7D-969A-83AA5C6578D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.Program4", "ProgramsForLearning.FourthProgram\ProgramsForLearning.Program4.csproj", "{DFAD0DF6-5214-4F7D-969A-83AA5C6578D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.FivethProgram", "ProgramsForLearning.FivethProgram\ProgramsForLearning.FivethProgram.csproj", "{4177CF2E-4C2D-41DB-94CF-FF859A5623F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.Program6", "ProgramsForLearning.Program6\ProgramsForLearning.Program6.csproj", "{6A47B730-DDEF-4BB9-8F08-410ED54F775D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.Program5", "ProgramsForLearning.Program5\ProgramsForLearning.Program5.csproj", "{4003F312-645F-4984-8394-F3EA5BB37468}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +37,14 @@ Global
 		{DFAD0DF6-5214-4F7D-969A-83AA5C6578D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFAD0DF6-5214-4F7D-969A-83AA5C6578D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFAD0DF6-5214-4F7D-969A-83AA5C6578D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4177CF2E-4C2D-41DB-94CF-FF859A5623F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4177CF2E-4C2D-41DB-94CF-FF859A5623F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4177CF2E-4C2D-41DB-94CF-FF859A5623F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4177CF2E-4C2D-41DB-94CF-FF859A5623F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A47B730-DDEF-4BB9-8F08-410ED54F775D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A47B730-DDEF-4BB9-8F08-410ED54F775D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A47B730-DDEF-4BB9-8F08-410ED54F775D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A47B730-DDEF-4BB9-8F08-410ED54F775D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4003F312-645F-4984-8394-F3EA5BB37468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4003F312-645F-4984-8394-F3EA5BB37468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4003F312-645F-4984-8394-F3EA5BB37468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4003F312-645F-4984-8394-F3EA5BB37468}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

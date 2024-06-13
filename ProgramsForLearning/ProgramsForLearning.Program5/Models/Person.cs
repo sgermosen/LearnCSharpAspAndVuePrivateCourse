@@ -1,4 +1,4 @@
-﻿namespace ProgramsForLearning.FivethProgram.Models
+﻿namespace ProgramsForLearning.Program5.Models
 {
     public class Person
     {

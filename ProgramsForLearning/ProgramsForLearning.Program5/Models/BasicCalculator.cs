@@ -1,8 +1,18 @@
-﻿namespace ProgramsForLearning.FivethProgram.Models
+﻿namespace ProgramsForLearning.Program5.Models
 {
     public class BasicCalculator
     {
+        private string Brand { get; set; }
 
+        public void SetBrand(string brandName)
+        {
+            Brand = brandName;
+        }
+
+        public string PrintModel()
+        {
+            return Brand;
+        }
         //public void PrintProgramHeader(string header1, string header2, string header3)
         public static void PrintProgramHeader(string header1, string header2, string header3)
         {
