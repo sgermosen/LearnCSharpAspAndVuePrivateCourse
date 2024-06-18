@@ -1,4 +1,6 @@
 ﻿using ProgramsForLearning.Program8.Contracts;
+using ProgramsForLearning.Program8.Factories;
+using ProgramsForLearning.Program8.Processors;
 using ProgramsForLearning.Program8.Services;
 
 namespace ProgramsForLearning.Program8
@@ -24,6 +26,17 @@ namespace ProgramsForLearning.Program8
             {
                 payment = new MoneyPayment();
             }
+
+            var creditCardFactory = new CreditCardPaymentFactory();
+            var moneyFactory = new MoneyPaymentFactory();
+
+            var creditCardProcessor = new PaymentProcessor(creditCardFactory);
+            var moneyProcessor = new PaymentProcessor(moneyFactory);
+
+            creditCardProcessor.ProcessPayment(1500);
+            moneyProcessor.ProcessPayment(50);
+
+
 
             var emaillNotifier = new EmailNotifier();
             var smsNotifier = new SmsNotifier();

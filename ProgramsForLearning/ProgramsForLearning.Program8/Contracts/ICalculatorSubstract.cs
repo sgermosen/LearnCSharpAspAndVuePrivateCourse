@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProgramsForLearning.Program8.Contracts
 {
-    internal class ICalculatorSubstract
+    public interface ICalculatorSubstract
     {
+        void substract(decimal val1, decimal val2);
     }
 }

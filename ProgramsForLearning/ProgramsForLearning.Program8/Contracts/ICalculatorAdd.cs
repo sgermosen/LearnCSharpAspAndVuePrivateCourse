@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProgramsForLearning.Program8.Contracts
 {
-    internal class ICalculatorAdd
+    public interface ICalculatorAdd
     {
+        void Add(decimal val1, decimal val2);
     }
 }

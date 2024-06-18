@@ -1,12 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ProgramsForLearning.Program8.Contracts;
 
 namespace ProgramsForLearning.Program8.Factories
 {
-    internal class PaymentFactory
+    public interface IPaymentFactory
     {
+        IPayment CreatePayment();
+    }
+
+    public class MoneyPaymentFactory : IPaymentFactory
+    {
+        public IPayment CreatePayment()
+        {
+            return new MoneyPayment();
+        }
+    }
+
+    public class CreditCardPaymentFactory : IPaymentFactory
+    {
+        public IPayment CreatePayment()
+        {
+            return new CreditCardPayment();
+        }
     }
 }
