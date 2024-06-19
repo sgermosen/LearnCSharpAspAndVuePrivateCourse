@@ -14,6 +14,6 @@ namespace ProgramsForLearning.Program8.Services
         public void Notify(string message)
         {
             _notifier.Send(message);
-        }
+        } 
     }
 }

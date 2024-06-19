@@ -1,8 +1,4 @@
-﻿
-
-using ProgramsForLearning.Program5.Models;
-
-namespace ProgramsForLearning.Program6.Models
+﻿namespace ProgramsForLearning.Program6.Models
 {
     public class AdvanceCalculator : BasicCalculator
     {

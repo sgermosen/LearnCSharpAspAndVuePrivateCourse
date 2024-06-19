@@ -77,7 +77,7 @@ foreach (var item in contacts)
 
 
 string json = string.Empty;
-json  = JsonHelper.Serialize( contact );
+json = JsonHelper.Serialize(contact);
 Console.WriteLine(json);
 
 var objectmine = JsonHelper.Deserialize<Contact>(json);

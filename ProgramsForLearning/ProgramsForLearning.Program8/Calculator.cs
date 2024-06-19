@@ -5,7 +5,7 @@ namespace ProgramsForLearning.Program8
 {
     public class Calculator : ICalculator, ICalculatorExtra
     {
-        public int Brand { get ; set ; }
+        public int Brand { get; set; }
 
         public decimal Add(decimal value1, decimal value2)
         {
@@ -19,7 +19,7 @@ namespace ProgramsForLearning.Program8
 
         public decimal Multiplication(decimal value1, decimal value2)
         {
-            return value1 * value2; 
+            return value1 * value2;
         }
 
         public decimal Pound(decimal value)

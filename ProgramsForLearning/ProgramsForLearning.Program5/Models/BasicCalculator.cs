@@ -1,5 +1,5 @@
 ﻿namespace ProgramsForLearning.Program5.Models
-{
+{ 
     public class BasicCalculator
     {
         private string Brand { get; set; }

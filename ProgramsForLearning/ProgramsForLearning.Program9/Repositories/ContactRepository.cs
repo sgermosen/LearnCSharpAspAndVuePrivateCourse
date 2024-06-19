@@ -2,7 +2,7 @@
 using ProgramsForLearning.Program9.Models;
 
 namespace ProgramsForLearning.Program9.Repositories
-{
+{ 
     public class ContactRepository : IContactRepository
     {
         private readonly List<Contact> _contacts = new List<Contact>();

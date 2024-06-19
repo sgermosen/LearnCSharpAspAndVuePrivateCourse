@@ -6,7 +6,6 @@
 //{
 //    public static void Main(string[] args)
 //    {
-using ProgramsForLearning.Program5.Models;
 using ProgramsForLearning.Program6.Models;
 
 //Console.WriteLine("Hello, World!");
@@ -21,20 +20,20 @@ using ProgramsForLearning.Program6.Models;
 //derivedClass.Name = "Juan";
 
 var basicMath = new AdvanceCalculator();
- 
+
 //basicMath.Brand = "Casio";
 //Console.WriteLine(basicMath.PrintModel());
- 
+
 //var newPerson = new Person();
- 
+
 
 //newPerson.CreatePersonWithoutReturn("Alberto", "Lebron", 27);
 
- //Console.WriteLine(newPerson.GetFullName());
+//Console.WriteLine(newPerson.GetFullName());
 
 //var newPerson2 = newPerson.CreatePerson("Alberto", "Santiago", 27,'M');
-  
- //Console.WriteLine(newPerson2.GetFullName());
+
+//Console.WriteLine(newPerson2.GetFullName());
 
 
 

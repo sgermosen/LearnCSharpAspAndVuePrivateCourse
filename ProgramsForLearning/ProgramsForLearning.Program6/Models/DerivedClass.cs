@@ -1,7 +1,5 @@
-﻿
-namespace ProgramsForLearning.Program6.Models;
-
-
+﻿namespace ProgramsForLearning.Program6.Models;
+ 
 public class DerivedClass : BaseClass
 {
     //public void DisplayMessage()

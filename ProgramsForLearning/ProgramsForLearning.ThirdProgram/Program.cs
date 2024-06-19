@@ -81,7 +81,7 @@ namespace ProgramsForLearning.ThirdProgram
                 //Le Mando unos argumentos
                 PrintNumberFromArray(numbers1, i);
             }
-             
+
             for (int i = 0; i <= 3; i++) //iteration
             {
                 PrintNumberFromArray(numbers2, i);
@@ -144,9 +144,9 @@ Y posterior a eso podrá escoger los números a los cuales les desea realizar di
 
         private static decimal MakeSum(decimal typedNumber1, decimal typedNumber2)
         {
-            string localString = "soy una cadena de alcance local"; 
+            string localString = "soy una cadena de alcance local";
             return typedNumber1 + typedNumber2;
-            Console.WriteLine(localString); 
+            Console.WriteLine(localString);
         }
 
         //                                     parametros

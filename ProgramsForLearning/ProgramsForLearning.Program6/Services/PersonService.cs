@@ -2,7 +2,8 @@
 
 namespace ProgramsForLearning.Program6.Services
 {
-    internal class PersonService : BaseClass
+    public class PersonService : BaseClass
     {
+
     }
 }

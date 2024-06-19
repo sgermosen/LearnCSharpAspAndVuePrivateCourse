@@ -1,5 +1,4 @@
 ﻿
-
 using ProgramsForLearning.Program7;
 
 var calc = new CalculatorAdv();

@@ -13,7 +13,7 @@ namespace ProgramsForLearning.Program8.Factories
         {
             return new MoneyPayment();
         }
-    }
+    } 
 
     public class CreditCardPaymentFactory : IPaymentFactory
     {

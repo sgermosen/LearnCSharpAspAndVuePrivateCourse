@@ -1,6 +1,6 @@
 ﻿namespace ProgramsForLearning.Program6.Models
 {
-    public abstract class  BasicCalculator
+    public abstract class BasicCalculator
     {
 
         private string Brand { get; set; }

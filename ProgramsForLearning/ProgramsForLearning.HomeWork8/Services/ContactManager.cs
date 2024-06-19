@@ -21,7 +21,7 @@ namespace ProgramsForLearning.HomeWork8.Services
             contact.Id = newId;
             _contacts.Add(contact);
         }
-         
+
         public void UpdateContact(Contact contact)
         {
             Contact existingContact = _contacts[contact.Id - 1];

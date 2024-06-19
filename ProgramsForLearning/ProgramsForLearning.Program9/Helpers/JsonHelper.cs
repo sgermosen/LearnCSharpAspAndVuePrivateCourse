@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 
 namespace ProgramsForLearning.Program9.Helpers
 {
@@ -27,9 +22,9 @@ namespace ProgramsForLearning.Program9.Helpers
             return JsonSerializer.Serialize(obj);
         }
 
-         
+
         public static T Deserialize<T>(string obj)
-        { 
+        {
             return JsonSerializer.Deserialize<T>(obj);
         }
 

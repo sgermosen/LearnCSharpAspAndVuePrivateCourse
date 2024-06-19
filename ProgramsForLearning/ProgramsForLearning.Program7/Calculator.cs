@@ -23,7 +23,7 @@ namespace ProgramsForLearning.Program7
         }
 
         public decimal Add(ref decimal value1, ref decimal value2) => value1 + value2;
-      //  public decimal Add(int value1, int value2) => value1 + value2;
+        //  public decimal Add(int value1, int value2) => value1 + value2;
 
         public decimal Add(decimal value1, decimal value2, decimal value3) => value1 + value2 + value3;
 

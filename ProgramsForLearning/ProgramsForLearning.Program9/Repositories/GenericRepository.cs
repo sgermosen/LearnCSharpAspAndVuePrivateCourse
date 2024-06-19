@@ -1,5 +1,5 @@
 ﻿namespace ProgramsForLearning.Program9.Repositories
-{
+{ 
     public class GenericRepository<T> where T : class
     {
         private readonly List<T> _Items = new List<T>();

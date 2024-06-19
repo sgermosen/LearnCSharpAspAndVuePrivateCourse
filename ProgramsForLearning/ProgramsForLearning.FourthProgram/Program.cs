@@ -235,4 +235,3 @@ static void MakeSubstraction(decimal typedNumber1, List<decimal> typedNumbers, r
     }
 }
 
- 

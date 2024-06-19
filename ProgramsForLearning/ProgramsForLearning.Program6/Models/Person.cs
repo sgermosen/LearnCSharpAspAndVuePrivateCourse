@@ -8,7 +8,7 @@
         public char Sex { get; set; }
 
 
-      
+
 
         //public string GetFullName()
         //{

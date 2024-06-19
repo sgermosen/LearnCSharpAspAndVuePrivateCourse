@@ -1,5 +1,5 @@
 ﻿namespace ProgramsForLearning.Program8.Contracts
-{
+{ 
     public interface ICalculator
     {
         public int Brand { get; set; }

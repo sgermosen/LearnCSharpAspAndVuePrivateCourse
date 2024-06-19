@@ -11,10 +11,10 @@ namespace ProgramsForLearning.Program8
         {
             return value1 + value2;
         }
-         
+
         public decimal Multiplication(decimal value1, decimal value2)
         {
-            return value1 * value2; 
+            return value1 * value2;
         }
 
         public decimal Substract(decimal value1, decimal value2)

@@ -4,7 +4,7 @@ using ProgramsForLearning.Program8.Processors;
 using ProgramsForLearning.Program8.Services;
 
 namespace ProgramsForLearning.Program8
-{
+{ 
     public class Program
     {
 

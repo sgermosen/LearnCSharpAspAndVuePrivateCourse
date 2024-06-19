@@ -1,4 +1,4 @@
-﻿//string[,] matrixRecord = {
+﻿//string[,] matrixRecord = { 
 //    { "Juan", "Pedro", "M" }, // Fila 0
 //    { "Alberto", "Santiago", "M" }, // Fila 1
 //    { "Juana", "Contreras", "F" }, // Fila 2

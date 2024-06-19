@@ -1,5 +1,4 @@
 ﻿namespace ProgramsForLearning.Program6.Models;
-
 public class BaseClass
 {
     public int Id { get; set; }

@@ -9,6 +9,6 @@ namespace ProgramsForLearning.Program9.Contracts
         void Add(Contact contact);
         void Update(Contact contact);
         void Delete(int id);
-     
+
     }
 }

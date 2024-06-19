@@ -51,7 +51,7 @@
     {
 
 
-       // private string _name; // public variables 
+        // private string _name; // public variables 
         //private string _lastName;
         //private int _age;
         //private char _sex;

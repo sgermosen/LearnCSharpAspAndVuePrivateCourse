@@ -1,8 +1,7 @@
 ﻿namespace ProgramsForLearning.Program5.Models
 {
     public partial class Person
-    {
-
+    { 
         public void MessageFromPartialExtended()
         {
             Console.WriteLine("Esto es un mensaje desde una clase parcial");
