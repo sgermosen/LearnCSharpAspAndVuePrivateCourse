@@ -166,6 +166,7 @@ else
         Console.WriteLine("1. Si, 2.No");
         wantToContinue = Convert.ToInt32(Console.ReadLine());
 
+        typedNumbers.RemoveAt(1);
     }
 
 
