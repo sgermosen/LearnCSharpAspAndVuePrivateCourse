@@ -17,31 +17,35 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.Program
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.Program7", "ProgramsForLearning.Program7\ProgramsForLearning.Program7.csproj", "{E211B948-BF18-4B6A-B6BC-E0D4B0C6A02C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.Program8", "ProgramsForLearning.Program8\ProgramsForLearning.Program8.csproj", "{B4736F6E-0485-4190-97CF-3779032A4FF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.Program8", "ProgramsForLearning.Program8\ProgramsForLearning.Program8.csproj", "{B4736F6E-0485-4190-97CF-3779032A4FF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.HomeWork8", "ProgramsForLearning.HomeWork8\ProgramsForLearning.HomeWork8.csproj", "{98B5B72E-1492-4208-A12D-10E32650995C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.HomeWork8", "ProgramsForLearning.HomeWork8\ProgramsForLearning.HomeWork8.csproj", "{98B5B72E-1492-4208-A12D-10E32650995C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.Program9", "ProgramsForLearning.Program9\ProgramsForLearning.Program9.csproj", "{0F8C7B31-E30A-4246-A87C-1029254EA548}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.Program9", "ProgramsForLearning.Program9\ProgramsForLearning.Program9.csproj", "{0F8C7B31-E30A-4246-A87C-1029254EA548}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.HomeWork1", "ProgramsForLearning.HomeWork1\ProgramsForLearning.HomeWork1.csproj", "{133DFE83-4606-4FFF-B9C3-8BBEA9EA6DDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.HomeWork1", "ProgramsForLearning.HomeWork1\ProgramsForLearning.HomeWork1.csproj", "{133DFE83-4606-4FFF-B9C3-8BBEA9EA6DDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.HomeWork2", "ProgramsForLearning.HomeWork2\ProgramsForLearning.HomeWork2.csproj", "{F4ACB6D6-8BDB-465F-A867-AAC0BAF52116}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.HomeWork2", "ProgramsForLearning.HomeWork2\ProgramsForLearning.HomeWork2.csproj", "{F4ACB6D6-8BDB-465F-A867-AAC0BAF52116}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.HomeWork3", "ProgramsForLearning.HomeWork3\ProgramsForLearning.HomeWork3.csproj", "{7E3281A8-151A-4C41-BC06-604E91985AD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.HomeWork3", "ProgramsForLearning.HomeWork3\ProgramsForLearning.HomeWork3.csproj", "{7E3281A8-151A-4C41-BC06-604E91985AD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.HomeWork4", "ProgramsForLearning.HomeWork4\ProgramsForLearning.HomeWork4.csproj", "{2369235D-FD5A-45C9-BCDC-597BC2FA778E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.HomeWork4", "ProgramsForLearning.HomeWork4\ProgramsForLearning.HomeWork4.csproj", "{2369235D-FD5A-45C9-BCDC-597BC2FA778E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.HomeWork5", "ProgramsForLearning.HomeWork5\ProgramsForLearning.HomeWork5.csproj", "{553AAA07-90AB-4F56-AADD-65E65CB098F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.HomeWork5", "ProgramsForLearning.HomeWork5\ProgramsForLearning.HomeWork5.csproj", "{553AAA07-90AB-4F56-AADD-65E65CB098F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.HomeWork6", "ProgramsForLearning.HomeWork6\ProgramsForLearning.HomeWork6.csproj", "{925B5CD2-BBF2-4BB2-B05A-6401519A8B2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.HomeWork6", "ProgramsForLearning.HomeWork6\ProgramsForLearning.HomeWork6.csproj", "{925B5CD2-BBF2-4BB2-B05A-6401519A8B2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.HomeWork7", "ProgramsForLearning.HomeWork7\ProgramsForLearning.HomeWork7.csproj", "{3E4ED046-73F7-4D46-826F-0AC4897D819C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.HomeWork7", "ProgramsForLearning.HomeWork7\ProgramsForLearning.HomeWork7.csproj", "{3E4ED046-73F7-4D46-826F-0AC4897D819C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.HomeWork9", "ProgramsForLearning.HomeWork9\ProgramsForLearning.HomeWork9.csproj", "{9E968ECC-99BA-437F-BA7C-671F7D417DB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.HomeWork9", "ProgramsForLearning.HomeWork9\ProgramsForLearning.HomeWork9.csproj", "{9E968ECC-99BA-437F-BA7C-671F7D417DB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.Program10", "ProgramsForLearning.Program10\ProgramsForLearning.Program10.csproj", "{9F28BE81-3BD0-4A19-9549-9B55278739D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.Program10", "ProgramsForLearning.Program10\ProgramsForLearning.Program10.csproj", "{9F28BE81-3BD0-4A19-9549-9B55278739D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.HomeWork10", "ProgramsForLearning.HomeWork10\ProgramsForLearning.HomeWork10.csproj", "{71B2CEC6-2AB8-4E5C-AE7C-FF412CBAB461}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramsForLearning.HomeWork10", "ProgramsForLearning.HomeWork10\ProgramsForLearning.HomeWork10.csproj", "{71B2CEC6-2AB8-4E5C-AE7C-FF412CBAB461}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.Program11", "ProgramsForLearning.Program11\ProgramsForLearning.Program11.csproj", "{210B9CA6-B366-485D-B92D-DA7524D810A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramsForLearning.HomeWork11", "ProgramsForLearning.HomeWork11\ProgramsForLearning.HomeWork11.csproj", "{428A6E61-A75A-45EC-9214-C7CE38AD3BA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +133,14 @@ Global
 		{71B2CEC6-2AB8-4E5C-AE7C-FF412CBAB461}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71B2CEC6-2AB8-4E5C-AE7C-FF412CBAB461}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71B2CEC6-2AB8-4E5C-AE7C-FF412CBAB461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{210B9CA6-B366-485D-B92D-DA7524D810A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{210B9CA6-B366-485D-B92D-DA7524D810A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{210B9CA6-B366-485D-B92D-DA7524D810A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{210B9CA6-B366-485D-B92D-DA7524D810A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{428A6E61-A75A-45EC-9214-C7CE38AD3BA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{428A6E61-A75A-45EC-9214-C7CE38AD3BA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{428A6E61-A75A-45EC-9214-C7CE38AD3BA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{428A6E61-A75A-45EC-9214-C7CE38AD3BA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
