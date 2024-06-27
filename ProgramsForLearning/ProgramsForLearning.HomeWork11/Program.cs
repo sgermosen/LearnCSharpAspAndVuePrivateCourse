@@ -69,8 +69,8 @@ finally
 var contactManager = new ContactManager();
 try
 {
-    contactManager.AddContact(new Contact { Id = 1, Name = "John", LastName = "Doe", Email = "john@example.com", PhoneNumber = "123-456-7890" });
-    contactManager.AddContact(new Contact { Id = 1, Name = "Jane", LastName = "Doe", Email = "jane@example.com", PhoneNumber = "987-654-3210" });
+    contactManager.AddContact(new Contact { Id = 1, Name = "John", LastName = "Doe", Email = "john@example.com", Phone = "123-456-7890" });
+    contactManager.AddContact(new Contact { Id = 1, Name = "Jane", LastName = "Doe", Email = "jane@example.com", Phone = "987-654-3210" });
 }
 catch (DuplicateContactException ex)
 {

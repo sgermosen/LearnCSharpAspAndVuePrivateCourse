@@ -169,3 +169,56 @@ END
 */
 select * from contacts
 select * from ContactsHistories
+
+------
+
+DECLARE @i INT = 15;
+DECLARE @max INT = 1000000;
+
+WHILE @i <= @max
+BEGIN
+    INSERT INTO Contacts 
+           (ContactId, Name, LastName, Email, Age, IsFavorite, DebAmount, SexId, Phone)
+     VALUES
+           (@i, 'Carmelo', 'Rubio', cast( @i as varchar(50)) + '@email.com', 15, 0, '0.00', 2, '');
+
+    SET @i = @i + 1;
+END;
+
+--optener la cantidad de registros que cumplen una condicion 
+select count(*) from contacts  where DebAmount > 10000;
+
+--permite devolver los valores donde no se dupliquen todos los campos que se indiquen
+ select distinct    name , lastname, email,   debamount   from Contacts order by contactid desc
+
+----me permite limitar la cnatidad de registros a devolver
+ select top 100    name , lastname, email, debamount  from Contacts order by contactid desc
+
+ --se usa para filtrar contenido que se contenga en el campo indicado
+ select * from contacts where email like  '%@email.com%'
+
+ --crear indices
+ create index idx_contact_email on Contacts (Email);
+
+ 
+
+ SELECT top 5  c.ContactId, Name, c.LastName, c.Email, c.Age, c.IsFavorite, c.BornDate, c.DebAmount, c.SexId, c.Phone, s.Name AS SexName
+FROM  dbo.Contacts AS c INNER JOIN
+         dbo.Sex AS s ON s.SexId = c.SexId
+
+
+		 select * from contacts where email like  '%999999%'
+
+
+		 begin transaction ; 
+		 update contacts set IsFavorite = 0
+
+
+		  select count (*) from contacts where IsFavorite = 1
+
+		  rollback
+
+		  commit
+
+
+	 
