@@ -1,7 +1,7 @@
-﻿using ProgramsForLearning.Program14.Context;
-using ProgramsForLearning.Program14.Contracts;
-using ProgramsForLearning.Program14.Models;
-namespace ProgramsForLearning.Program14.Repositories
+﻿using Contacts.Application.Contracts;
+using Contacts.Domain;
+using Contacts.Persistence;
+namespace Contacts.Infraestructure.Repositories
 {
     public class ContactEfRepository : IContactRepository
     {

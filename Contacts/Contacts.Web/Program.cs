@@ -1,12 +1,13 @@
+using Contacts.Application.Contracts;
+using Contacts.Infraestructure.Repositories;
+using Contacts.Persistence;
 using Microsoft.EntityFrameworkCore;
-using ProgramsForLearning.Program14.Context;
-using ProgramsForLearning.Program14.Contracts;
-using ProgramsForLearning.Program14.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
 builder.Services.AddDbContext<ApplicationContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddTransient<IContactRepository, ContactEfRepository>();

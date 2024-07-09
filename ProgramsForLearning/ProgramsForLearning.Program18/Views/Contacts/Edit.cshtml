@@ -1,0 +1,48 @@
+﻿@model ProgramsForLearning.Program14.Models.Contact
+@{
+    ViewData["Title"] = "Editar de contacto";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Agregando un contacto</h1>
+</div>
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Edit" asp-controller="Contacts">
+               <input type="hidden" asp-for="ContactId" />
+                <div class="col-md-3">
+                  <label asp-for="Name"> Nombre: </label>
+                  <input type="text" class="form-control" asp-for="Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="LastName"> Apellido: </label>
+                    <input type="text" class="form-control" asp-for="LastName" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="Address"> </label>
+                    <input type="text" class="form-control" asp-for="Address" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="Email"> Email: </label>
+                    <input type="text" class="form-control" asp-for="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label   > Telefono: </label>
+                    <input type="tel" class="form-control" asp-for="Phone" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                 <button type="submit" class="btn btn-primary" >Guardar</button>
+                </div>
+            </form>
+          
+        </div>
+    </div>
+
+ 
+</div>

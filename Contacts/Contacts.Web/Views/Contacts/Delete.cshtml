@@ -1,0 +1,49 @@
+﻿@model Contacts.Domain.Contact
+@{
+    ViewData["Title"] = "Editar de contacto";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Está seguro de eliminar este registro?</h1>
+</div>
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Delete" asp-controller="Contacts">
+               <input type="hidden" asp-for="ContactId" />
+                <div class="col-md-3">
+                  <label asp-for="Name"> Nombre: </label>
+     
+                    <label>  @Model.Name </label>
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="LastName"> Apellido: </label>
+               
+                    <label>  @Model.LastName </label>
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="Address"> </label>
+              
+                    <label>  @Model.Address </label>
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="Email"> Email: </label>
+          
+                    <label>  @Model.Email </label>
+                </div>
+                <div class="col-md-3">
+                    <label   > Telefono: </label>
+                    <label>  @Model.Phone </label>
+              
+                  
+                </div>
+                <div class="col-md-3">
+                 <button type="submit" class="btn btn-danger" >Eliminar</button>
+                </div>
+            </form>
+          
+        </div>
+    </div>
+
+ 
+</div>

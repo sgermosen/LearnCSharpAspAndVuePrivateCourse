@@ -1,12 +1,12 @@
+using Contacts.Application.Contracts;
+using Contacts.Domain;
+using Contacts.Infraestructure.Repositories;
+using Contacts.Persistence;
+using Contacts.Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using ProgramsForLearning.Program14.Context;
-using ProgramsForLearning.Program14.Contracts;
-using ProgramsForLearning.Program14.Repositories;
-using ProgramsForLearning.Program18.Models;
 using System.Diagnostics;
-using ProgramsForLearning.Program14.Models;
 
-namespace ProgramsForLearning.Program18.Controllers
+namespace Contacts.Web.Controllers
 {
     public class ContactsController : Controller
     {
@@ -29,12 +29,12 @@ namespace ProgramsForLearning.Program18.Controllers
         }
 
         public IActionResult Create()
-        { 
+        {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(Contact model )
+        public IActionResult Create(Contact model)
         {
             if (!ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace ProgramsForLearning.Program18.Controllers
 
         [HttpPost]
         public IActionResult Delete(Contact model)
-        { 
+        {
             _contactRepository.Delete(model.ContactId);
             return RedirectToAction("Index");
         }
