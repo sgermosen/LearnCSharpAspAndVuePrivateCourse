@@ -1,0 +1,46 @@
+﻿@model List<ProgramsForLearning.Program14.Models.Contact> 
+@{
+    ViewData["Title"] = "Contacts";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Cotnacts</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<table>
+    <thead>
+    <tr>
+        <td>
+            Nombre
+        </td>
+        <td>
+            Emaul
+        </td>
+    </tr>
+
+    </thead>
+    <tbody>
+        @if(Model.Any())
+        {
+             foreach(var item in Model )
+            {
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="2">
+                    No records found
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

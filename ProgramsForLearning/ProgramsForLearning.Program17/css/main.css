@@ -1,0 +1,29 @@
+ 
+#paragrahp2 {
+  /* background-color: aquamarine; */
+}
+
+p {
+  font-size: 20px !important;
+  color: blue;
+  /*   background-color: beige; */
+  /*     color: blue !important;  */
+}
+
+a {
+  font-size: xx-large;
+}
+
+.paragrahp {
+  color: #4bdb93;
+  /*  font-size: xx-large; */
+}
+
+.intro {
+  /*   background-color: #DBD94B; */
+}
+.container {
+  background-color: #dbd94b;
+  font-size: xx-large;
+}
+ 
