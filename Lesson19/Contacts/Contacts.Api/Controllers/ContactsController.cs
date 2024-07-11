@@ -1,7 +1,6 @@
-﻿using Contacts.Domain;
-using Contacts.Persistence;
+﻿using Contacts.Application.Contracts;
+using Contacts.Domain;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Contacts.Api.Controllers
 {
@@ -9,9 +8,9 @@ namespace Contacts.Api.Controllers
     [Route("[controller]")]
     public class ContactsController : ControllerBase
     {
-        private readonly ApplicationContext _context;
+        private readonly IContactRepository _context;
 
-        public ContactsController(ApplicationContext context)
+        public ContactsController(IContactRepository context)
         {
             _context = context;
         }
@@ -19,14 +18,14 @@ namespace Contacts.Api.Controllers
         [HttpGet(Name = "GetContacts")]
         public IEnumerable<Contact> Get()
         {
-            var contactsFromDb = _context.Contacts.ToList();
+            var contactsFromDb = _context.GetAll();
             return contactsFromDb;
         }
 
         [HttpGet("{id}", Name = "GetContact")]
         public ActionResult<Contact> Get(int id)
         {
-            var contactFromDb = _context.Contacts.FirstOrDefault(p => p.ContactId == id);
+            var contactFromDb = _context.GetById(id);
             if (contactFromDb == null)
             {
                 return NotFound("Contact not found");
@@ -42,12 +41,12 @@ namespace Contacts.Api.Controllers
                 return BadRequest("Contact data is null");
             }
 
-            bool emailExists = await _context.Contacts
-                .AnyAsync(c => c.Email == model.Email);
-            if (emailExists)
-            {
-                return BadRequest("This email is already in use");
-            }
+            //bool emailExists = await _context.Contacts
+            //    .AnyAsync(c => c.Email == model.Email);
+            //if (emailExists)
+            //{
+            //    return BadRequest("This email is already in use");
+            //}
 
             if (ModelState.IsValid)
             {
@@ -58,8 +57,7 @@ namespace Contacts.Api.Controllers
                 //    Name = model.Name
                 //};
 
-                _context.Contacts.Add(model);
-                await _context.SaveChangesAsync();
+                _context.Add(model);
                 return CreatedAtRoute("GetContact", new { id = model.ContactId }, model);
             }
 
@@ -74,26 +72,27 @@ namespace Contacts.Api.Controllers
                 return BadRequest("Contact data is invalid");
             }
 
-            var contactFromDb = await _context.Contacts.FindAsync(id);
-            if (contactFromDb == null)
-            {
-                return NotFound("Contact not found");
-            }
+            //var contactFromDb =   _context.GetById(id);
+            //if (contactFromDb == null)
+            //{
+            //    return NotFound("Contact not found");
+            //}
 
-            if (await _context.Contacts.AnyAsync(c => c.Email == model.Email && c.ContactId != id))
-            {
-                return BadRequest("This email is already in use by another contact");
-            }
+            //if (await _context.Contacts.AnyAsync(c => c.Email == model.Email && c.ContactId != id))
+            //{
+            //    return BadRequest("This email is already in use by another contact");
+            //}
 
             if (ModelState.IsValid)
             {
-                contactFromDb.Email = model.Email;
-                contactFromDb.Phone = model.Phone;
-                contactFromDb.Name = model.Name;
+                //contactFromDb.Email = model.Email;
+                //contactFromDb.Phone = model.Phone;
+                //contactFromDb.Name = model.Name;
 
-                _context.Contacts.Update(contactFromDb);
-                await _context.SaveChangesAsync();
-                return Ok(contactFromDb);
+                //_context.Contacts.Update(contactFromDb);
+                //await _context.SaveChangesAsync();
+                _context.Update(model);
+                return Ok(model);
             }
 
             return BadRequest(ModelState);
@@ -102,14 +101,13 @@ namespace Contacts.Api.Controllers
         [HttpDelete("{id}", Name = "DeleteContact")]
         public async Task<IActionResult> Delete(int id)
         {
-            var contactFromDb = await _context.Contacts.FindAsync(id);
+            var contactFromDb = _context.GetById(id);
             if (contactFromDb == null)
             {
                 return NotFound("Contact not found");
             }
 
-            _context.Contacts.Remove(contactFromDb);
-            await _context.SaveChangesAsync();
+            _context.Delete(contactFromDb.ContactId);
             return Ok("Contact Deleted");
         }
     }

@@ -1,0 +1,72 @@
+﻿@model List<Contacts.Domain.Contact>
+@{
+    ViewData["Title"] = "Listado de contactos";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Cotnacts</h1>
+</div>
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <a asp-action="Create" asp-controller="Contacts"
+                   class="btn btn-primary">Crear Nuevo</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Acción
+                    </th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @if (Model.Any())
+                {
+                    foreach (var contact in Model)
+                    {
+                        <tr>
+                            <td>
+                                <text>    @contact.Name </text>
+                            </td>
+                            <td>
+                                @contact.Email
+                            </td>
+                            <td>
+                                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@contact.ContactId"
+                                asp-controller="Contacts">
+                                    Editar
+                                </a>
+                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@contact.ContactId"
+                                   asp-controller="Contacts">
+                                    Eliminar
+                                </a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="3">
+                            <p> No se encontraron registros</p>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
