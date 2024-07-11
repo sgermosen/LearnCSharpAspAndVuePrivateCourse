@@ -14,7 +14,8 @@ namespace Contacts.Api.Helpers
                 Name = contact.Name,
                 Address = contact.Address,
                 Age = contact.Age,
-                LastName = contact.LastName
+                LastName = contact.LastName, 
+                ContactId = contact.ContactId 
             };
         }
         public static Contact ToContact(ContactDto dto)

@@ -1,49 +1,90 @@
-﻿@model Contacts.Domain.Contact
-@{
-    ViewData["Title"] = "eliminar de contacto";
+﻿@{
+    ViewData["Title"] = "Eliminar contacto";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Está seguro de eliminar este registro?</h1>
+    <h1 class="display-4">¿Está seguro de eliminar este registro?</h1>
 </div>
 <div>
     <div class="row">
         <div class="col-md-12">
-            <form asp-action="Delete" asp-controller="Contacts">
-               <input type="hidden" asp-for="ContactId" />
+            <form id="deleteContactForm">
+                <input type="hidden" id="ContactId" />
                 <div class="col-md-3">
-                  <label asp-for="Name"> Nombre: </label>
-     
-                    <label>  @Model.Name </label>
+                    <label> Nombre: </label>
+                    <label id="Name"></label>
                 </div>
                 <div class="col-md-3">
-                    <label asp-for="LastName"> Apellido: </label>
-               
-                    <label>  @Model.LastName </label>
+                    <label> Apellido: </label>
+                    <label id="LastName"></label>
                 </div>
                 <div class="col-md-3">
-                    <label asp-for="Address"> </label>
-              
-                    <label>  @Model.Address </label>
+                    <label> Dirección: </label>
+                    <label id="Address"></label>
                 </div>
                 <div class="col-md-3">
-                    <label asp-for="Email"> Email: </label>
-          
-                    <label>  @Model.Email </label>
+                    <label> Email: </label>
+                    <label id="Email"></label>
                 </div>
                 <div class="col-md-3">
-                    <label   > Telefono: </label>
-                    <label>  @Model.Phone </label>
-              
-                  
+                    <label> Teléfono: </label>
+                    <label id="Phone"></label>
                 </div>
                 <div class="col-md-3">
-                 <button type="submit" class="btn btn-danger" >Eliminar</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteContact()">Eliminar</button>
                 </div>
             </form>
-          
         </div>
     </div>
-
- 
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+           // let urlParams = new URLSearchParams(window.location.search);
+            let contactId = window.location.pathname.split('/').pop();
+
+           // let contactId = urlParams.get('id');
+            if (contactId) {
+                $('#ContactId').val(contactId);
+                loadContact(contactId);
+            } else {
+                alert('ID de contacto no encontrado en la URL');
+            }
+        });
+
+        function loadContact(contactId) {
+            $.ajax({
+                url: `https://localhost:7224/api/Contacts/${contactId}`,
+                type: 'GET',
+                success: function (contact) {
+                    $('#Name').text(contact.name);
+                    $('#LastName').text(contact.lastName);
+                    $('#Address').text(contact.address);
+                    $('#Email').text(contact.email);
+                    $('#Phone').text(contact.phone);
+                },
+                error: function (error) {
+                    console.log(error);
+                    alert('Ocurrió un error al cargar los datos del contacto');
+                }
+            });
+        }
+
+        function deleteContact() {
+            let contactId = $('#ContactId').val();
+
+            $.ajax({
+                url: `https://localhost:7224/api/Contacts/${contactId}`,
+                type: 'DELETE',
+                success: function (result) {
+                    window.location.href = '/Contacts/Index';
+                },
+                error: function (error) {
+                    console.log(error);
+                    alert('Ocurrió un error');
+                }
+            });
+        }
+    </script>
+}

@@ -4,14 +4,13 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome Cotnacts</h1>
+    <h1 class="display-4">Welcome Contacts</h1>
 </div>
 <div>
     <div class="row">
         <div class="col-md-12">
             <div class="col-md-3">
-                <a asp-action="Create" asp-controller="Contacts"
-                   class="btn btn-primary">Crear Nuevo</a>
+                <a asp-action="Create" asp-controller="Contacts" class="btn btn-primary">Crear Nuevo</a>
             </div>
         </div>
     </div>
@@ -20,53 +19,95 @@
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>
-                        Nombre
-                    </th>
-                    <th>
-                        Email
-                    </th>
-                    <th>
-                        Acción
-                    </th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Acción</th>
                 </tr>
-
             </thead>
-            <tbody>
-                @if (Model.Any())
-                {
-                    foreach (var contact in Model)
-                    {
-                        <tr>
-                            <td>
-                                <text>    @contact.Name </text>
-                            </td>
-                            <td>
-                                @contact.Email
-                            </td>
-                            <td>
-                                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@contact.ContactId"
-                                asp-controller="Contacts">
-                                    Editar
-                                </a>
-                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@contact.ContactId"
-                                   asp-controller="Contacts">
-                                    Eliminar
-                                </a>
-                            </td>
-
-                        </tr>
-                    }
-                }
-                else
-                {
-                    <tr>
-                        <td colspan="3">
-                            <p> No se encontraron registros</p>
-                        </td>
-                    </tr>
-                }
+            <tbody id="contactsTableBody">
+                <!-- Los datos serán cargados dinámicamente con JavaScript -->
             </tbody>
         </table>
     </div>
 </div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirmar Eliminación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro que desea eliminar este contacto?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteButton">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            loadContacts();
+        });
+
+        function loadContacts() {
+            $.ajax({
+                url: 'https://localhost:7224/api/Contacts',
+                type: 'GET',
+                success: function (data) {
+                    let contactsTableBody = $('#contactsTableBody');
+                    contactsTableBody.empty();
+
+                    data.contacts.forEach(contact => {
+                        contactsTableBody.append(`
+                                <tr>
+                                    <td>${contact.name}</td>
+                                    <td>${contact.email}</td>
+                                    <td>
+                                        <a class="btn btn-warning" href="/Contacts/Edit/${contact.contactId}">Editar</a>
+                                        <a class="btn btn-danger" href="/Contacts/Delete/${contact.contactId}">Eliminar</a>
+                                        <button class="btn btn-danger" onclick="confirmDelete(${contact.contactId})">Eliminar con pop up</button>
+                                      </td>
+                                </tr>
+                            `);
+                    });
+                },
+                error: function (error) {
+                    console.log(error);
+                    alert('Ocurrió un error al cargar los contactos');
+                }
+            });
+        }
+
+        function confirmDelete(contactId) {
+            $('#confirmDeleteButton').data('contact-id', contactId);
+            $('#deleteModal').modal('show');
+        }
+
+        $('#confirmDeleteButton').click(function () {
+            let contactId = $(this).data('contact-id');
+            deleteContact(contactId);
+        });
+
+        function deleteContact(contactId) {
+            $.ajax({
+                url: `https://localhost:7224/api/Contacts/${contactId}`,
+                type: 'DELETE',
+                success: function (result) {
+                    $('#deleteModal').modal('hide');
+                    loadContacts();
+                },
+                error: function (error) {
+                    console.log(error);
+                    alert('Ocurrió un error al eliminar el contacto');
+                }
+            });
+        }
+    </script>
+}

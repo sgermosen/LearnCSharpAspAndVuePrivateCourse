@@ -1,12 +1,11 @@
+using Contacts.Api.Profile;
 using Contacts.Application.Contracts;
 using Contacts.Infraestructure.Repositories;
 using Contacts.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
+  
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<ApplicationContext>(options =>
@@ -16,7 +15,7 @@ builder.Services.AddTransient<ContactAdoRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
 builder.Services.AddCors(options =>
 {

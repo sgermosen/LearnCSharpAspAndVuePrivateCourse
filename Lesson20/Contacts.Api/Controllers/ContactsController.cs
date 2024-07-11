@@ -1,4 +1,5 @@
-﻿using Contacts.Api.Dtos.Contacts;
+﻿using AutoMapper;
+using Contacts.Api.Dtos.Contacts;
 using Contacts.Api.Helpers;
 using Contacts.Api.Responses;
 using Contacts.Application.Contracts;
@@ -13,44 +14,59 @@ namespace Contacts.Api.Controllers
     {
         private readonly IContactRepository _context;
 
-        public ContactsController(IContactRepository context)
+        private readonly IMapper _mapper;
+
+        public ContactsController(IContactRepository context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         [HttpGet(Name = "GetContacts")]
         public ContactResponse Get()
         {
-            var response = new ContactResponse();
-            response.Message = "Todo Bien";
+            //var response = new ContactResponse();
+            //response.Message = "Todo Bien";
+            //var contactsFromDb = _context.GetAll();
+            //var contactsToReturn = new List<ContactDto>();
+            //foreach (var contact in contactsFromDb)
+            //{
+            //    //contactsToReturn.Add(new ContactDto
+            //    //{
+            //    //    Email = contact.Email,
+            //    //    Phone = contact.Phone,
+            //    //    Name = contact.Name,
+            //    //    Address = contact.Address,
+            //    //    Age = contact.Age,
+            //    //    LastName = contact.LastName
+            //    //});
+            //    contactsToReturn.Add(ContactHelper.ToContactDto(contact));
+            //}
+            //response.Contacts = contactsToReturn;
+            //return response;
             var contactsFromDb = _context.GetAll();
-            var contactsToReturn = new List<ContactDto>();
-            foreach (var contact in contactsFromDb)
-            {
-                //contactsToReturn.Add(new ContactDto
-                //{
-                //    Email = contact.Email,
-                //    Phone = contact.Phone,
-                //    Name = contact.Name,
-                //    Address = contact.Address,
-                //    Age = contact.Age,
-                //    LastName = contact.LastName
-                //});
-                contactsToReturn.Add(ContactHelper.ToContactDto(contact));
-            }
-            response.Contacts = contactsToReturn;
-            return response;
+            var contactsToReturn = _mapper.Map<List<ContactDto>>(contactsFromDb);
+            return new ContactResponse { Contacts = contactsToReturn, Message = "Todo Bien" };
+
         }
 
         [HttpGet("{id}", Name = "GetContact")]
         public ActionResult<Contact> Get(int id)
         {
+            //var contactFromDb = _context.GetById(id);
+            //if (contactFromDb == null)
+            //{
+            //    return NotFound("Contact not found");
+            //}
+            //return Ok(contactFromDb);
+
             var contactFromDb = _context.GetById(id);
             if (contactFromDb == null)
             {
                 return NotFound("Contact not found");
             }
-            return Ok(contactFromDb);
+            var contactToReturn = _mapper.Map<ContactDto>(contactFromDb);
+            return Ok(contactToReturn);
         }
 
         [HttpPost(Name = "CreateContact")]
@@ -80,10 +96,16 @@ namespace Contacts.Api.Controllers
                 //    LastName = model.LastName,
                 //    SexId = 1
                 //};
-                var contactDb = ContactHelper.ToContact(model);
-                _context.Add(contactDb);
-                model.ContactId = contactDb.ContactId;
-                return CreatedAtRoute("GetContact", new { id = contactDb.ContactId }, model);
+                //var contactDb = ContactHelper.ToContact(model);
+                //_context.Add(contactDb);
+                //model.ContactId = contactDb.ContactId;
+                //return CreatedAtRoute("GetContact", new { id = contactDb.ContactId }, model);
+                var contactToCreate = _mapper.Map<Contact>(model);
+                _context.Add(contactToCreate);
+                 var contactToReturn = _mapper.Map<ContactDto>(contactToCreate);
+                model.ContactId = contactToCreate.ContactId;
+                return CreatedAtRoute("GetContact", new { id = contactToCreate.ContactId }, model);
+
             }
 
             return BadRequest(ModelState);
@@ -116,7 +138,10 @@ namespace Contacts.Api.Controllers
 
                 //_context.Contacts.Update(contactFromDb);
                 //await _context.SaveChangesAsync();
-                _context.Update(model);
+                //_context.Update(model);
+                //return Ok(model);
+                var contactToUpdate = _mapper.Map<Contact>(model);
+                _context.Update(contactToUpdate);
                 return Ok(model);
             }
 
