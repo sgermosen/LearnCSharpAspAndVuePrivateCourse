@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Eliminar contacto";
+}
+
+<div class="text-center">
+    <h1 class="display-4">¿Está seguro de eliminar este registro?</h1>
+</div>
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <form id="deleteContactForm">
+                <input type="hidden" id="ContactId" />
+                <div class="col-md-3">
+                    <label> Nombre: </label>
+                    <label id="Name"></label>
+                </div>
+                <div class="col-md-3">
+                    <label> Apellido: </label>
+                    <label id="LastName"></label>
+                </div>
+                <div class="col-md-3">
+                    <label> Dirección: </label>
+                    <label id="Address"></label>
+                </div>
+                <div class="col-md-3">
+                    <label> Email: </label>
+                    <label id="Email"></label>
+                </div>
+                <div class="col-md-3">
+                    <label> Teléfono: </label>
+                    <label id="Phone"></label>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-danger" onclick="deleteContact(0)">Eliminar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/contacts/getcontact.js"></script>
+    <script src="~/js/contacts/deletecontact.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            // let urlParams = new URLSearchParams(window.location.search);
+            let contactId = window.location.pathname.split('/').pop();
+
+            // let contactId = urlParams.get('id');
+            if (contactId) {
+                $('#ContactId').val(contactId);
+                loadContact(contactId);
+            } else {
+                alert('ID de contacto no encontrado en la URL');
+            }
+        });
+         
+    </script>
+}
