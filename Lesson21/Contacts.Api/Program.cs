@@ -1,19 +1,26 @@
 using Contacts.Api.Profile;
 using Contacts.Application.Contracts;
 using Contacts.Application.Services;
+using Contacts.Domain;
 using Contacts.Infraestructure.Repositories;
 using Contacts.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-  
+
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<ApplicationContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddTransient<IContactRepository, ContactEfRepository>();
 builder.Services.AddTransient<IContactService, ContactService>();
-//builder.Services.AddTransient<ContactAdoRepository>();
+builder.Services.AddTransient<INotificationService, NotificationService>();
+builder.Services.AddTransient<IAppointmentService, AppointmentService>();
+
+builder.Services.AddTransient<IContactRepository, ContactEfRepository>();
+
+builder.Services.AddTransient<IRepository<Contact>, ContactEfRepository>();
+builder.Services.AddTransient<IRepository<Notification>, NotificationEfRepository>();
+builder.Services.AddTransient<IRepository<Appointment>, AppointmentEfRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -28,7 +35,7 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
- 
+
 app.UseCors("AllowSpecificOrigin");
 
 if (app.Environment.IsDevelopment())

@@ -51,7 +51,7 @@ namespace Contacts.Api.Controllers
         }
 
         [HttpGet("{id}", Name = "GetContact")]
-        public ActionResult<Contact> Get(int id)
+        public async Task<ActionResult<Contact>> Get(int id)
         {
             //var contactFromDb = _context.GetById(id);
             //if (contactFromDb == null)
@@ -60,7 +60,7 @@ namespace Contacts.Api.Controllers
             //}
             //return Ok(contactFromDb);
 
-            var contactFromDb = _contactService.GetContactById(id);
+            var contactFromDb = await  _contactService.GetContactById(id);
             if (contactFromDb == null)
             {
                 return NotFound("Contact not found");
