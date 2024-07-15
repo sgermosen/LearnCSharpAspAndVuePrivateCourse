@@ -1,0 +1,82 @@
+﻿@model Contacts.Domain.Contact
+@{
+    ViewData["Title"] = "Creacion de contacto";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Agregando un contacto</h1>
+</div>
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <form id="contactForm" >
+
+                <div class="col-md-3">
+                  <label asp-for="Name"> Nombre: </label>
+                  <input id="Name" type="text" class="form-control" asp-for="Name" />
+                    <span  id="NameValidation" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="LastName"> Apellido: </label>
+                    <input id="LastName" type="text" class="form-control" asp-for="LastName" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="Address"> </label>
+                    <input id="Address" type="text" class="form-control" asp-for="Address" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="Email"> Email: </label>
+                    <input id="Email" type="text" class="form-control" asp-for="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label   > Telefono: </label>
+                    <input id="Phone" type="tel" class="form-control" asp-for="Phone" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-primary" onclick="createContact()">Guardar</button>
+                </div>
+            </form>
+          
+        </div>
+    </div> 
+</div>
+   @section Scripts { 
+<script>
+    
+    function createContact() {
+
+        //let name = document.getElementById('Name').textContent();
+      //  let name = $('#Name').val();
+        //let elementByClass = $('.ClassName').val();
+         
+        let contact = { 
+                "Name": $('#Name').val(),
+                "LastName": $('#LastName').val(),
+                "Age": 0,
+                "Address": $('#Address').val(),
+                "Email": $('#Email').val(),
+                "Phone": $('#Phone').val()
+        };
+            $.ajax({
+                url: 'https://localhost:7224/api/Contacts',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(contact),
+                success: function (result) {
+                    window.location.href = '/Contacts/Index';
+                },
+                error: function (error) {
+                    console.log(error);
+                    alert('ocurrio un error');
+                }
+            });
+
+
+       // console.log(contact.Address);
+    }
+</script>
+  }  

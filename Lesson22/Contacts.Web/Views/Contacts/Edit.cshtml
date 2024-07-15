@@ -1,0 +1,100 @@
+﻿@model Contacts.Domain.Contact
+@{
+    ViewData["Title"] = "Editar de contacto";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Editando un contacto</h1>
+</div>
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <form id="editContactForm">
+                <input type="hidden" id="ContactId" value="@Model.Id" />
+                <div class="col-md-3">
+                    <label > Nombre: </label>
+                    <input id="Name" type="text" class="form-control" />
+                    <span  class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label > Apellido: </label>
+                    <input id="LastName" type="text" class="form-control" />
+                    <span  class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label > Dirección: </label>
+                    <input id="Address" type="text" class="form-control" />
+                    <span  class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label> Email: </label>
+                    <input id="Email" type="text" class="form-control" />
+                    <span  class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label> Telefono: </label>
+                    <input id="Phone" type="tel" class="form-control" />
+                    <span  class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-primary" 
+                    onclick="updateContact()">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            let contactId = $('#ContactId').val();
+            loadContact(contactId);
+        });
+
+        function loadContact(contactId) {
+            $.ajax({
+                url: `https://localhost:7224/api/Contacts/${contactId}`,
+                type: 'GET',
+                success: function (contact) {
+                    $('#Name').val(contact.name);
+                    $('#LastName').val(contact.lastName);
+                    $('#Address').val(contact.address);
+                    $('#Email').val(contact.email);
+                    $('#Phone').val(contact.phone);
+                },
+                error: function (error) {
+                    console.log(error);
+                    alert('Ocurrió un error al cargar los datos del contacto');
+                }
+            });
+        }
+
+        function updateContact() {
+            let contactId = $('#ContactId').val();
+            let contact = {
+                "contactId": contactId,
+                "name": $('#Name').val(),
+                "lastName": $('#LastName').val(),
+                "age": 0,
+                "address": $('#Address').val(),
+                "email": $('#Email').val(),
+                "phone": $('#Phone').val()
+            };
+
+            $.ajax({
+                url: `https://localhost:7224/api/Contacts/${contactId}`,
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify(contact),
+                success: function (result) {
+                    window.location.href = '/Contacts/Index';
+                },
+                error: function (error) {
+                    console.log(error);
+                    alert('Ocurrió un error');
+                }
+            });
+        }
+    </script>
+}
