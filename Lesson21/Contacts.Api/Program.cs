@@ -29,7 +29,7 @@ builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        builder => builder.WithOrigins("https://localhost:7152") // Cambia esta URL por la de tu aplicación web
+        builder => builder.WithOrigins("https://localhost:7152", "http://localhost:8080") // Cambia esta URL por la de tu aplicación web
                           .AllowAnyHeader()
                           .AllowAnyMethod());
 });

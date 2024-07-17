@@ -1,5 +1,5 @@
 ﻿const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
     entry: './wwwroot/js/main.js',
@@ -29,13 +29,14 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'vue$': 'vue/dist/vue.esm.js'
+            'vue$': 'vue/dist/vue.esm-bundler.js'
         },
         extensions: ['.js', '.vue', '.json']
-    }
-,
+    },
     devServer: {
-        contentBase: path.join(__dirname, 'wwwroot'),
+        static: {
+            directory: path.join(__dirname, 'wwwroot'),
+        },
         hot: true
     },
     plugins: [
