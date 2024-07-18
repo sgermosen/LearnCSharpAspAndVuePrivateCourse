@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Repositories\ContactAdoRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Contacts.Application\Contacts.Application.csproj" />
+    <ProjectReference Include="..\Contacts.Domain\Contacts.Domain.csproj" />
+    <ProjectReference Include="..\Contacts.Persistence\Contacts.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
