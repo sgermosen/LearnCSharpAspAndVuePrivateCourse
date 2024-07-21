@@ -19,8 +19,11 @@ builder.Services.AddTransient<IAppointmentService, AppointmentService>();
 builder.Services.AddTransient<IContactRepository, ContactEfRepository>();
 
 builder.Services.AddTransient<IRepository<Contact>, ContactEfRepository>();
-builder.Services.AddTransient<IRepository<Notification>, NotificationEfRepository>();
-builder.Services.AddTransient<IRepository<Appointment>, AppointmentEfRepository>();
+//builder.Services.AddTransient<IRepository<Notification>, NotificationEfRepository>();
+//builder.Services.AddTransient<IRepository<Appointment>, AppointmentEfRepository>();
+
+builder.Services.AddTransient<IRepository<Notification>, Repository<Notification>>();
+builder.Services.AddTransient<IRepository<Appointment>, Repository<Appointment>>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

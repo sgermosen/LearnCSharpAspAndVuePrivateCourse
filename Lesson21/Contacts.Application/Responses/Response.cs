@@ -1,4 +1,4 @@
-﻿namespace Contacts.Api.Responses
+﻿namespace Contacts.Application.Responses
 {
     public class Response <T> where T : class
     {

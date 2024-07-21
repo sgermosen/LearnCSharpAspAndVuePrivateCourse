@@ -1,4 +1,6 @@
 ﻿using Contacts.Application.Contracts;
+using Contacts.Application.Responses;
+using Contacts.Application.Responses.Contacts;
 using Contacts.Domain;
 using System;
 using System.Collections.Generic;
@@ -22,9 +24,38 @@ namespace Contacts.Application.Services
             return await _contactRepository.GetAll();
         }
 
-        public async Task<Contact> GetContactById(int id)
+        public async Task<Response<ContactResponse>> GetContactById(int id)
         {
-            return await _contactRepository.GetById(id);
+            var contactinDb = await _contactRepository.GetById(id); 
+
+            if (contactinDb == null)
+            {
+                return new Response<ContactResponse>
+                {
+                    Code = 404,
+                    Error = "No se encontró registro",
+                    Success = false
+                };
+            }
+
+            var contactResponse = new ContactResponse
+            {
+                ContactId = contactinDb.Id,
+                Email = contactinDb.Email,
+                Phone = contactinDb.Phone,
+                Name = contactinDb.Name,
+                Address = contactinDb.Address,
+                Age = contactinDb.Age,
+                LastName = contactinDb.LastName
+            };
+            return new Response<ContactResponse>
+            {
+                Code = 200,
+                Data = contactResponse,
+                Message = "Todo bien",
+                Success = true
+            };
+          //  return await _contactRepository.GetById(id);
         }
 
         public async Task AddContact(Contact contact)

@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Repositories\AppointmentEfRepository.cs" />
     <Compile Remove="Repositories\ContactAdoRepository.cs" />
+    <Compile Remove="Repositories\NotificationEfRepository.cs" />
   </ItemGroup>
 
   <ItemGroup>
